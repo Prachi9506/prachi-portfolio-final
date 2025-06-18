@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prachi Sharma - Competitive Programmer & Developer</title>
+    <link rel="icon" type="image/svg+xml" href="/vite.svg">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="code-bracket">&lt;</span>
+                <span class="logo-text">Prachi Sharma</span>
+                <span class="code-bracket">/&gt;</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#achievements" class="nav-link">CP Stats</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        Hi, I'm <span class="accent-text">Prachi Sharma</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        <span class="typed-text"></span>
+                        <span class="cursor">|</span>
+                    </p>
+                    <p class="hero-description">
+                        🔥Passionate competitive programmer and full-stack developer with expertise in 
+                        algorithms, data structures, and modern web technologies.🔥
+                        <br>
+                        ✨Still wondering why my code works… but happy it does..😂 
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">View Projects</a>
+                        <a href="#contact" class="btn btn-primary">Resume</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="code-window">
+                        <div class="window-header">
+                            <div class="window-buttons">
+                                <span class="btn-close"></span>
+                                <span class="btn-minimize"></span>
+                                <span class="btn-maximize"></span>
+                            </div>
+                            <span class="window-title">competitive_programming.cpp</span>
+                        </div>
+                        <div class="code-content">
+                            <pre><code><span class="code-comment">// Solving problems, one algorithm at a time</span>
+<span class="code-keyword">#include</span> <span class="code-string">&lt;iostream&gt;</span>
+<span class="code-keyword">#include</span> <span class="code-string">&lt;algorithm&gt;</span>
+
+<span class="code-keyword">int</span> <span class="code-function">main</span>() {
+    <span class="code-keyword">string</span> passion = <span class="code-string">"competitive programming"</span>;
+    <span class="code-keyword">while</span>(true) {
+        solve_problems();
+        learn_algorithms();
+        <span class="code-keyword">if</span>(contest_available()) {
+            participate();
+        }
+    }
+    <span class="code-keyword">return</span> <span class="code-number">0</span>;
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                       Hey, I’m Prachi Sharma — a Computer Science undergrad who writes code, breaks it, fixes it (usually), and occasionally ends up learning something new in the process.
+
+I’m into competitive programming, web development, and anything that involves logic, caffeine, and a tiny bit of chaos.
+                    </p>
+                    <p>
+                        Skilled in C++, Python, JavaScript, HTML5, CSS3, Bootstrap, Tailwind, MySQL, and Git/GitHub. Currently diving into the backend world with Node.js, Express.js, and MongoDB — because front-end wasn’t challenging enough (just kidding, JS, you win).
+
+I’ve built projects, participated in hackathons, and love turning ideas into real, working applications — preferably without segmentation faults.
+Also comfortable with problem-solving, data structures & algorithms, and pretending that debugging is a personality trait.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">600+</span>
+                            <span class="stat-label">Problems Solved</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">65+</span>
+                            <span class="stat-label">Contests Participated</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">15+</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="profile-card">
+                        <div class="profile-header">
+                            <div class="profile-avatar">
+                                <img class="abc" src="me.jpg" alt="">
+                            </div>
+                            <h3>Prachi Sharma</h3>
+                            <p>Competitive Programmer</p>
+                        </div>
+                        <div class="profile-info">
+                            <div class="info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Delhi</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>Computer Science</span>
+                            </div>
+                            <div class="info-item">
+                                <!-- <i class="fas fa-trophy"></i>
+                                <span>Codeforces Expert</span> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-code"></i>
+                        Programming Languages
+                    </h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <span class="skill-name">C++</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Python</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">C</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">JavaScript</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="88%"></div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-project-diagram"></i>
+                        Algorithms & DS
+                    </h3>
+                    <div class="skills-tags">
+                        <span class="skill-tag">Dynamic Programming</span>
+                        <span class="skill-tag">Graph Algorithms</span>
+                        <span class="skill-tag">Tree Structures</span>
+                        <span class="skill-tag">Greedy Algorithms</span>
+                        <span class="skill-tag">Number Theory</span>
+                        <span class="skill-tag">String Algorithms</span>
+                        <span class="skill-tag">Geometry</span>
+                        <span class="skill-tag">Binary Search</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-tools"></i>
+                        Technologies & Tools
+                    </h3>
+                    <div class="skills-tags">
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">Matplotlib</span>
+                        <span class="skill-tag"> pandas</span>
+                        <span class="skill-tag">ExpressJS</span>
+                        <span class="skill-tag">NumPy</span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Prachi9506/final-typing" class="project-link"><i class="fab fa-github"></i></a>
+                            <a href="https://prachi9506.github.io/final-typing/" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="project-title">Typing Master</h3>
+                    <p class="project-description">
+                        Gamified typing tutor that teaches fast and accurate keyboard skills. Features real-time feedback, highlighted virtual keyboard, and fun animations to improve muscle memory.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">API</span>
+                        <span class="tech-tag">Animation</span>
+
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Prachi9506/final-final-contest-tracker" class="project-link"><i class="fab fa-github"></i></a>
+                            <a href="https://prachi9506.github.io/final-final-contest-tracker/" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="project-title">Contest & Hackathon Tracker</h3>
+                    <p class="project-description">
+                        Track upcoming programming contests and hackathons from one place. An all-in-one dashboard that fetches events from various platforms like Codeforces, LeetCode, Devfolio, and Unstop — complete with countdowns, filters, and platform-specific highlights.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">API</span>
+                        <span class="tech-tag">Animation</span>
+                    </div>
+                </div>
+
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-code-branch"></i>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Prachi9506/FinTeens" class="project-link"><i class="fab fa-github"></i></a>
+                            <a href="https://prachi9506.github.io/FinTeens/" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="project-title">FinTeens</h3>
+                    <p class="project-description">
+                        Interactive website that promotes financial literacy among teenagers. Includes budgeting tools, animated concept explanations, and savings trackers designed to make money management fun and intuitive.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">API</span>
+                        <span class="tech-tag">Animation</span>
+                        <span class="tech-tag">Chart.js </span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Prachi9506/career-counselling-" class="project-link"><i class="fab fa-github"></i></a>
+                            <a href="https://prachi9506.github.io/career-counselling-/" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="project-title">Career Counseling</h3>
+                    <p class="project-description">
+                        Helping students discover the right career path. An interactive platform that suggests career options based on user interests, skills, and strengths — with quizzes, role insights, and learning roadmaps.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">API</span>
+                        <span class="tech-tag">Animation</span>
+                        <span class="tech-tag">Chart.js </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="achievements">
+        <div class="container">
+            <h2 class="section-title">Competitive Programming Achievements</h2>
+                            <div class="skill-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-trophy"></i>
+                        Platforms
+                    </h3>
+                    <div class="platform-stats">
+                        <div class="platform-item" onclick="window.location.href='https://codeforces.com/profile/prachisharma9506';" style="cursor: pointer;">
+                            <div class="platform-icon">CF</div>
+                            <div class="platform-info">
+                                <span class="platform-name">Codeforces</span>
+                                <span class="platform-rating">Newbie(970)</span>
+                            </div>
+                        </div>
+                        <div class="platform-item" onclick="window.location.href='https://leetcode.com/u/prachi9506/';" style="cursor: pointer;">
+                            <div class="platform-icon">LC</div>
+                            <div class="platform-info">
+                                <span class="platform-name">LeetCode</span>
+                                <span class="platform-rating">1550+ Rating</span>
+                            </div>
+                        </div>
+                        <div class="platform-item" onclick="window.location.href='https://www.codechef.com/users/true_chef_66';" style="cursor: pointer;" >
+                            <div class="platform-icon">CC</div>
+                            <div class="platform-info">
+                                <span class="platform-name">CodeChef</span>
+                                <span class="platform-rating">1350+ Rating</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+<br>
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3>DevUP Programming Contest</h3>
+                    <p>1st Place</p>
+                    <span class="achievement-date">March 2025</span>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Jaypee Coding Contest</h3>
+                    <p>top 10%</p>
+                    <span class="achievement-date">December 2024</span>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>AlgoUtsav'25</h3>
+                    <p>Qualified for Round 2</p>
+                    <span class="achievement-date">March 2025</span>
+                </div>
+                
+                <!-- <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3>CodeChef Weekly Contest</h3>
+                    <p>Top 1% in 5+ contests</p>
+                    <span class="achievement-date">2023</span>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Connect!</h3>
+                    <p>
+                        I'm always excited to discuss new opportunities, collaborate on interesting projects, 
+                        or just chat about algorithms and competitive programming.
+                    </p>
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <span>prachisharma9506@gmail.com</span>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fab fa-linkedin"></i>
+                            <span>www.linkedin.com/in/prachisharma95</span>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fab fa-github"></i>
+                            <span>https://github.com/Prachi9506</span>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fas fa-code"></i>
+                            <span>https://codeforces.com/profile/prachisharma9506</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-container">
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" required>
+                            <label for="name">Name</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" required>
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" required>
+                            <label for="subject">Subject</label>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <label for="message">Message</label>
+                        </div>
+                        <!-- <button type="submit" class="btn btn-primary">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button> -->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; Prachi Sharma, Crafted with <i class="fas fa-heart"></i> and lots of coffee.</p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://github.com/Prachi9506" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/prachisharma95" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    <!-- <a href="#" class="social-link"><i class="fab fa-twitter"></i></a> -->
+                    <!-- <a href="#" class="social-link"><i class="fas fa-code"></i></a> -->
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="./main.js"></script>
+</body>
+</html>
