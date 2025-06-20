@@ -160,138 +160,138 @@ animatedElements.forEach(el => {
     scrollObserver.observe(el);
 });
 
-// Contact form handling with EmailJS
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
+// // Contact form handling with EmailJS
+// contactForm.addEventListener('submit', (e) => {
+//     e.preventDefault();
     
-    // Get form data
-    const formData = new FormData(contactForm);
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const subject = formData.get('subject');
-    const message = formData.get('message');
+//     // Get form data
+//     const formData = new FormData(contactForm);
+//     const name = formData.get('name');
+//     const email = formData.get('email');
+//     const subject = formData.get('subject');
+//     const message = formData.get('message');
     
-    // Simple form validation
-    if (!name || !email || !subject || !message) {
-        showNotification('Please fill in all fields', 'error');
-        return;
-    }
+//     // Simple form validation
+//     if (!name || !email || !subject || !message) {
+//         showNotification('Please fill in all fields', 'error');
+//         return;
+//     }
     
-    if (!isValidEmail(email)) {
-        showNotification('Please enter a valid email address', 'error');
-        return;
-    }
+//     if (!isValidEmail(email)) {
+//         showNotification('Please enter a valid email address', 'error');
+//         return;
+//     }
     
-    // Prepare email data
-    const emailData = {
-        to_email: 'alex.chen@email.com',
-        from_name: name,
-        from_email: email,
-        subject: subject,
-        message: message,
-        reply_to: email
-    };
+//     // Prepare email data
+//     const emailData = {
+//         to_email: 'prachisharma9506@email.com',
+//         from_name: name,
+//         from_email: email,
+//         subject: subject,
+//         message: message,
+//         reply_to: email
+//     };
     
-    // Show loading state
-    const submitBtn = contactForm.querySelector('.btn');
-    const originalText = submitBtn.innerHTML;
+//     // Show loading state
+//     const submitBtn = contactForm.querySelector('.btn');
+//     const originalText = submitBtn.innerHTML;
     
-    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-    submitBtn.disabled = true;
+//     submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+//     submitBtn.disabled = true;
     
-    // Send email using EmailJS (you'll need to set up EmailJS service)
-    // For now, we'll simulate the email sending
-    setTimeout(() => {
-        // In a real implementation, you would use EmailJS here:
-        // emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', emailData)
-        //   .then(() => {
-        //     showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
-        //     contactForm.reset();
-        //   })
-        //   .catch(() => {
-        //     showNotification('Failed to send message. Please try again.', 'error');
-        //   })
-        //   .finally(() => {
-        //     submitBtn.innerHTML = originalText;
-        //     submitBtn.disabled = false;
-        //   });
+//     // Send email using EmailJS (you'll need to set up EmailJS service)
+//     // For now, we'll simulate the email sending
+//     setTimeout(() => {
+//         // In a real implementation, you would use EmailJS here:
+//         // emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', emailData)
+//         //   .then(() => {
+//         //     showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
+//         //     contactForm.reset();
+//         //   })
+//         //   .catch(() => {
+//         //     showNotification('Failed to send message. Please try again.', 'error');
+//         //   })
+//         //   .finally(() => {
+//         //     submitBtn.innerHTML = originalText;
+//         //     submitBtn.disabled = false;
+//         //   });
         
-        // Simulate successful email sending
-        console.log('Email would be sent to alex.chen@email.com with data:', emailData);
-        showNotification(`Message sent successfully to alex.chen@email.com! I'll get back to you soon.`, 'success');
-        contactForm.reset();
-        submitBtn.innerHTML = originalText;
-        submitBtn.disabled = false;
-    }, 2000);
-});
+//         // Simulate successful email sending
+//         console.log('Email would be sent to prachisharma@email.com with data:', emailData);
+//         showNotification(`Message sent successfully to prachisharma9506@email.com! I'll get back to you soon.`, 'success');
+//         contactForm.reset();
+//         submitBtn.innerHTML = originalText;
+//         submitBtn.disabled = false;
+//     }, 2000);
+// });
 
-// Email validation function
-function isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-}
+// // Email validation function
+// function isValidEmail(email) {
+//     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+//     return emailRegex.test(email);
+// }
 
-// Notification system
-function showNotification(message, type = 'info') {
-    // Remove existing notifications
-    const existingNotifications = document.querySelectorAll('.notification');
-    existingNotifications.forEach(notification => notification.remove());
+// // Notification system
+// function showNotification(message, type = 'info') {
+//     // Remove existing notifications
+//     const existingNotifications = document.querySelectorAll('.notification');
+//     existingNotifications.forEach(notification => notification.remove());
     
-    // Create notification element
-    const notification = document.createElement('div');
-    notification.className = `notification notification-${type}`;
-    notification.innerHTML = `
-        <div class="notification-content">
-            <span class="notification-message">${message}</span>
-            <button class="notification-close">&times;</button>
-        </div>
-    `;
+//     // Create notification element
+//     const notification = document.createElement('div');
+//     notification.className = `notification notification-${type}`;
+//     notification.innerHTML = `
+//         <div class="notification-content">
+//             <span class="notification-message">${message}</span>
+//             <button class="notification-close">&times;</button>
+//         </div>
+//     `;
     
-    // Add notification styles
-    notification.style.cssText = `
-        position: fixed;
-        top: 100px;
-        right: 20px;
-        background: ${type === 'success' ? '#10b981' : type === 'error' ? '#ef4444' : '#3b82f6'};
-        color: white;
-        padding: 1rem 1.5rem;
-        border-radius: 0.5rem;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        z-index: 10000;
-        transform: translateX(400px);
-        transition: transform 0.3s ease;
-        max-width: 350px;
-        word-wrap: break-word;
-    `;
+//     // Add notification styles
+//     notification.style.cssText = `
+//         position: fixed;
+//         top: 100px;
+//         right: 20px;
+//         background: ${type === 'success' ? '#10b981' : type === 'error' ? '#ef4444' : '#3b82f6'};
+//         color: white;
+//         padding: 1rem 1.5rem;
+//         border-radius: 0.5rem;
+//         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+//         z-index: 10000;
+//         transform: translateX(400px);
+//         transition: transform 0.3s ease;
+//         max-width: 350px;
+//         word-wrap: break-word;
+//     `;
     
-    // Add to body
-    document.body.appendChild(notification);
+//     // Add to body
+//     document.body.appendChild(notification);
     
-    // Animate in
-    setTimeout(() => {
-        notification.style.transform = 'translateX(0)';
-    }, 100);
+//     // Animate in
+//     setTimeout(() => {
+//         notification.style.transform = 'translateX(0)';
+//     }, 100);
     
-    // Close button functionality
-    const closeBtn = notification.querySelector('.notification-close');
-    closeBtn.addEventListener('click', () => {
-        removeNotification(notification);
-    });
+//     // Close button functionality
+//     const closeBtn = notification.querySelector('.notification-close');
+//     closeBtn.addEventListener('click', () => {
+//         removeNotification(notification);
+//     });
     
-    // Auto remove after 5 seconds
-    setTimeout(() => {
-        removeNotification(notification);
-    }, 5000);
-}
+//     // Auto remove after 5 seconds
+//     setTimeout(() => {
+//         removeNotification(notification);
+//     }, 5000);
+// }
 
-function removeNotification(notification) {
-    notification.style.transform = 'translateX(400px)';
-    setTimeout(() => {
-        if (notification.parentNode) {
-            notification.parentNode.removeChild(notification);
-        }
-    }, 300);
-}
+// function removeNotification(notification) {
+//     notification.style.transform = 'translateX(400px)';
+//     setTimeout(() => {
+//         if (notification.parentNode) {
+//             notification.parentNode.removeChild(notification);
+//         }
+//     }, 300);
+// }
 
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -407,12 +407,12 @@ document.head.appendChild(rippleStyle);
 
 // Console easter egg
 console.log(`
-🚀 Welcome to Alex Chen's Portfolio!
+🚀 Welcome to Prachi sharma's Portfolio!
 =====================================
 
 Thanks for checking out the code! 
 If you're interested in collaborating or have any questions,
-feel free to reach out at alex.chen@email.com!
+feel free to reach out at prachisharma9506@email.com!
 
 Happy coding! 💻
 `);
