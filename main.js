@@ -1,3 +1,6 @@
+
+// new
+
 // DOM Elements
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('nav-menu');
@@ -18,6 +21,14 @@ navLinks.forEach(link => {
         hamburger.classList.remove('active');
         navMenu.classList.remove('active');
     });
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+    }
 });
 
 // Active navigation link based on scroll position
@@ -60,18 +71,12 @@ backToTopBtn.addEventListener('click', () => {
 // Typing animation for hero section
 const typedTextSpan = document.querySelector('.typed-text');
 const textArray = [
-    "Trying to fix one bug, created five more.",
-    "C++ is my love language... and my stress trigger.",
-    "Living proof that Ctrl+Z saves lives.",
-    "Solving problems by googling error messages.",
-    "Coding at 2 AM builds character (and bugs).",
-    "My code works... don't ask how.",
-    "Dreams in recursion, wakes up in segfault.",
-    "Not all heroes wear capes, some debug in pajamas.",
-    "Git commit -m 'final_final_final_FIX'",
-    "Powered by coffee, chaos, and curly braces."
+    'Competitive Programmer',
+    'Algorithm Enthusiast',
+    'Full Stack Developer',
+    'Problem Solver',
+    'Code Optimizer'
 ];
-
 const typingDelay = 100;
 const erasingDelay = 50;
 const newTextDelay = 2000;
@@ -155,7 +160,7 @@ animatedElements.forEach(el => {
     scrollObserver.observe(el);
 });
 
-// Contact form handling
+// Contact form handling with EmailJS
 contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
     
@@ -177,15 +182,43 @@ contactForm.addEventListener('submit', (e) => {
         return;
     }
     
-    // Simulate form submission
+    // Prepare email data
+    const emailData = {
+        to_email: 'alex.chen@email.com',
+        from_name: name,
+        from_email: email,
+        subject: subject,
+        message: message,
+        reply_to: email
+    };
+    
+    // Show loading state
     const submitBtn = contactForm.querySelector('.btn');
     const originalText = submitBtn.innerHTML;
     
     submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
     submitBtn.disabled = true;
     
+    // Send email using EmailJS (you'll need to set up EmailJS service)
+    // For now, we'll simulate the email sending
     setTimeout(() => {
-        showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
+        // In a real implementation, you would use EmailJS here:
+        // emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', emailData)
+        //   .then(() => {
+        //     showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
+        //     contactForm.reset();
+        //   })
+        //   .catch(() => {
+        //     showNotification('Failed to send message. Please try again.', 'error');
+        //   })
+        //   .finally(() => {
+        //     submitBtn.innerHTML = originalText;
+        //     submitBtn.disabled = false;
+        //   });
+        
+        // Simulate successful email sending
+        console.log('Email would be sent to alex.chen@email.com with data:', emailData);
+        showNotification(`Message sent successfully to alex.chen@email.com! I'll get back to you soon.`, 'success');
         contactForm.reset();
         submitBtn.innerHTML = originalText;
         submitBtn.disabled = false;
@@ -228,6 +261,7 @@ function showNotification(message, type = 'info') {
         transform: translateX(400px);
         transition: transform 0.3s ease;
         max-width: 350px;
+        word-wrap: break-word;
     `;
     
     // Add to body
@@ -278,27 +312,31 @@ window.addEventListener('load', () => {
     document.body.classList.add('loaded');
 });
 
-// Parallax effect for hero section
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const parallaxElements = document.querySelectorAll('.hero-visual');
-    
-    parallaxElements.forEach(element => {
-        const speed = 0.3;
-        element.style.transform = `translateY(${scrolled * speed}px)`;
+// Parallax effect for hero section (disabled on mobile for performance)
+if (window.innerWidth > 768) {
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const parallaxElements = document.querySelectorAll('.hero-visual');
+        
+        parallaxElements.forEach(element => {
+            const speed = 0.3;
+            element.style.transform = `translateY(${scrolled * speed}px)`;
+        });
     });
-});
+}
 
-// Add hover effects for project cards
-document.querySelectorAll('.project-card').forEach(card => {
-    card.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-10px) scale(1.02)';
+// Add hover effects for project cards (disabled on touch devices)
+if (!('ontouchstart' in window)) {
+    document.querySelectorAll('.project-card').forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px) scale(1.02)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
     });
-    
-    card.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0) scale(1)';
-    });
-});
+}
 
 // Theme toggle functionality (if needed)
 function toggleTheme() {
@@ -314,7 +352,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Add ripple effect to buttons
+// Add ripple effect to buttons (disabled on mobile for performance)
 function createRipple(event) {
     const button = event.currentTarget;
     const circle = document.createElement('span');
@@ -334,10 +372,12 @@ function createRipple(event) {
     button.appendChild(circle);
 }
 
-// Add ripple effect to all buttons
-document.querySelectorAll('.btn').forEach(button => {
-    button.addEventListener('click', createRipple);
-});
+// Add ripple effect to all buttons (only on desktop)
+if (window.innerWidth > 768) {
+    document.querySelectorAll('.btn').forEach(button => {
+        button.addEventListener('click', createRipple);
+    });
+}
 
 // Add CSS for ripple effect
 const rippleStyle = document.createElement('style');
@@ -367,12 +407,12 @@ document.head.appendChild(rippleStyle);
 
 // Console easter egg
 console.log(`
-🚀 Welcome to Prachi Sharma's Portfolio!
+🚀 Welcome to Alex Chen's Portfolio!
 =====================================
 
 Thanks for checking out the code! 
 If you're interested in collaborating or have any questions,
-feel free to reach out!
+feel free to reach out at alex.chen@email.com!
 
 Happy coding! 💻
 `);
@@ -394,3 +434,84 @@ if ('IntersectionObserver' in window) {
         imageObserver.observe(img);
     });
 }
+
+// Optimize animations for mobile devices
+const isMobile = window.innerWidth <= 768;
+if (isMobile) {
+    // Reduce animation complexity on mobile
+    document.documentElement.style.setProperty('--transition-smooth', 'all 0.2s ease');
+    document.documentElement.style.setProperty('--transition-bounce', 'all 0.2s ease');
+}
+
+// Handle orientation changes
+window.addEventListener('orientationchange', () => {
+    setTimeout(() => {
+        // Close mobile menu on orientation change
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+        
+        // Recalculate viewport height
+        document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+    }, 100);
+});
+
+// Set initial viewport height for mobile
+document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+
+// Prevent zoom on double tap for iOS
+let lastTouchEnd = 0;
+document.addEventListener('touchend', function (event) {
+    const now = (new Date()).getTime();
+    if (now - lastTouchEnd <= 300) {
+        event.preventDefault();
+    }
+    lastTouchEnd = now;
+}, false);
+
+// Improve scroll performance on mobile
+let ticking = false;
+function updateScrollPosition() {
+    // Update scroll-based animations here
+    ticking = false;
+}
+
+window.addEventListener('scroll', () => {
+    if (!ticking) {
+        requestAnimationFrame(updateScrollPosition);
+        ticking = true;
+    }
+});
+
+// Responsive font size adjustment
+function adjustFontSize() {
+    const screenWidth = window.innerWidth;
+    const baseSize = 16;
+    
+    if (screenWidth < 360) {
+        document.documentElement.style.fontSize = '14px';
+    } else if (screenWidth < 480) {
+        document.documentElement.style.fontSize = '15px';
+    } else if (screenWidth > 1920) {
+        document.documentElement.style.fontSize = '18px';
+    } else {
+        document.documentElement.style.fontSize = `${baseSize}px`;
+    }
+}
+
+// Call on load and resize
+window.addEventListener('load', adjustFontSize);
+window.addEventListener('resize', adjustFontSize);
+
+// Handle viewport changes for mobile browsers
+function handleViewportChange() {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
+window.addEventListener('resize', handleViewportChange);
+window.addEventListener('orientationchange', () => {
+    setTimeout(handleViewportChange, 100);
+});
+
+// Initialize
+handleViewportChange();
