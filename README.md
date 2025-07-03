@@ -2,7 +2,7 @@
 
 A clean, responsive, and interactive personal portfolio website built with pure **HTML**, **CSS**, and **JavaScript**. This site showcases my work as a **Competitive Programmer**, **Full-Stack Developer**, and **Problem Solver** — all crafted with love, logic, and a bit of caffeine ☕.
 
-[Live Demo 🚀](https://prachi9506.github.io) | [GitHub Repo 🛠️](https://github.com/Prachi9506)
+[Live Demo 🚀](https://prachi9506.github.io/prachi-portfolio-final/) | [GitHub Repo 🛠️](https://github.com/Prachi9506)
 
 ---
 
